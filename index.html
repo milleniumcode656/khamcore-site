@@ -64,6 +64,18 @@ header .container {
     margin: 0 auto;
 }
 
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
 header h2 {
     font-size: 1.3rem;
     margin: 0;
@@ -128,6 +140,11 @@ nav ul li a:hover {
     
     header h2 {
         font-size: 1rem;
+    }
+    
+    .logo-img {
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -494,7 +511,10 @@ footer p {
 
 <header>
     <div class="container">
-        <h2><i class="fas fa-snowflake"></i> Khamco Refrigeration Company Ltd</h2>
+        <div class="logo-container">
+            <img src="/khamcore-site/logo.png" alt="Khamco Refrigeration Company Logo" class="logo-img">
+            <h2><i class="fas fa-snowflake"></i> Khamco Refrigeration Company Ltd</h2>
+        </div>
         <div class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
@@ -593,10 +613,10 @@ footer p {
     <div class="container">
         <h2>Our Work Gallery</h2>
         <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1581091012184-3c179be3c5e0?auto=format&fit=crop&w=600&q=80" alt="HVAC Installation" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1607453767578-8c3ebacfe3c3?auto=format&fit=crop&w=600&q=80" alt="Cold Room Installation" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1595663625510-5f261eeb65e3?auto=format&fit=crop&w=600&q=80" alt="Air Conditioning Unit" loading="lazy">
-            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Commercial Refrigeration" loading="lazy">
+            <img src="/khamcore-site/gallery1.png" alt="Khamco Refrigeration Project 1" loading="lazy">
+            <img src="/khamcore-site/gallery2.png" alt="Khamco Refrigeration Project 2" loading="lazy">
+            <img src="/khamcore-site/gallery3.png" alt="Khamco Refrigeration Project 3" loading="lazy">
+            <img src="/khamcore-site/gallery4.png" alt="Khamco Refrigeration Project 4" loading="lazy">
         </div>
     </div>
 </section>
