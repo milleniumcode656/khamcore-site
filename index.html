@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Khamco Refrigeration Company Ltd - Professional air conditioning, cold room, mechanical ventilation, and refrigeration services in Kenya">
+<title>Khamco Refrigeration Company | Professional HVAC Solutions</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+/* Top Bar */
+.top-bar {
+    background: #00264d;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 101;
+}
+
+/* Header */
+header {
+    background: #004080;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h2 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+/* Navigation */
+nav {
+    position: relative;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(255,255,255,0.1);
+    opacity: 1;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+/* Mobile Navigation */
+@media(max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #004080;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 250px;
+        padding: 15px;
+        gap: 15px;
+        box-shadow: -2px 4px 10px rgba(0,0,0,0.2);
+        border-radius: 5px;
+    }
+    
+    nav ul.show {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    header h2 {
+        font-size: 1rem;
+    }
+}
+
+/* Hero Section - ORIGINAL BLUE OVERLAY RESTORED */
+#hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,64,128,0.7), rgba(0,64,128,0.7)), url('https://images.unsplash.com/photo-1581091012184-3c179be3c5e0?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: clamp(1.8rem, 5vw, 2.7rem);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 30px;
+    border-radius: 5px;
+    margin: 8px;
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    opacity: 1;
+}
+
+.primary {
+    background: #FFBF00;
+    color: #004080;
+}
+
+.secondary {
+    background: #007A3D;
+    color: #fff;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    min-height: calc(100vh - 150px);
+}
+
+section.active {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Special handling for hero section when it's active */
+#hero.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 40px;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #FFBF00;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* About Section */
+.info-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.info-item {
+    flex: 1 1 250px;
+    background: linear-gradient(135deg, #007A3D 0%, #005a2e 100%);
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item strong {
+    display: block;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.extra-info {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.extra-info h3 {
+    color: #004080;
+    margin: 25px 0 15px 0;
+    font-size: 1.3rem;
+}
+
+.extra-info h3:first-child {
+    margin-top: 0;
+}
+
+.extra-info ul {
+    padding-left: 25px;
+    line-height: 1.8;
+}
+
+.extra-info ul li {
+    margin: 8px 0;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.service {
+    flex: 1 1 280px;
+    background: #FFBF00;
+    color: #004080;
+    padding: 30px 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.service strong {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.service p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Gallery Section */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 320px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Lightbox */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+}
+
+/* Contact Section */
+#contact .container {
+    max-width: 700px;
+}
+
+form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea {
+    padding: 14px 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #004080;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+button[type="submit"] {
+    padding: 14px 30px;
+    background: #007A3D;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: #005a2e;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Responsive Adjustments */
+@media(max-width: 768px) {
+    section {
+        padding: 40px 15px;
+        min-height: auto;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .info-item, .service {
+        padding: 20px;
+    }
+    
+    .gallery img {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+    }
+    
+    .extra-info {
+        padding: 20px;
+    }
+}
+
+@media(max-width: 480px) {
+    section {
+        padding: 30px 15px;
+    }
+    
+    h2 {
+        margin-bottom: 30px;
+    }
+    
+    .info-item strong {
+        font-size: 1.1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <i class="fas fa-phone-alt"></i> +254710160717 &nbsp;|&nbsp; 
+    <i class="fas fa-envelope"></i> khamcorefrigeration@gmail.com
+</div>
+
+<header>
+    <div class="container">
+        <h2><i class="fas fa-snowflake"></i> Khamco Refrigeration Company Ltd</h2>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav>
+            <ul id="navMenu">
+                <li><a data-target="hero"><i class="fas fa-home"></i> Home</a></li>
+                <li><a data-target="about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a data-target="services"><i class="fas fa-wrench"></i> Services</a></li>
+                <li><a data-target="gallery"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a data-target="contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="hero" class="active">
+    <div class="hero-content">
+        <h1>Welcome to Khamco Refrigeration Company Ltd</h1>
+        <p>Professional Air Conditioning • Cold Room Solutions • Mechanical Ventilation • Refrigeration Contractors</p>
+        <a class="btn primary" data-target="services"><i class="fas fa-cog"></i> Our Services</a>
+        <a class="btn secondary" data-target="contact"><i class="fas fa-phone-alt"></i> Contact Us</a>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2>About Us</h2>
+        <div class="info-group">
+            <div class="info-item">
+                <strong><i class="fas fa-bullseye"></i> Our Mission</strong>
+                <p>To provide high-quality refrigeration, air conditioning, and mechanical ventilation solutions that meet the unique needs of businesses, institutions, and households.</p>
+            </div>
+            <div class="info-item">
+                <strong><i class="fas fa-eye"></i> Our Vision</strong>
+                <p>To become the leading refrigeration and HVAC contractor in East Africa.</p>
+            </div>
+            <div class="info-item">
+                <strong><i class="fas fa-chart-line"></i> Our Strategy</strong>
+                <p>We focus on continuous improvement through skilled teams and modern technology.</p>
+            </div>
+            <div class="info-item">
+                <strong><i class="fas fa-star"></i> Why Us?</strong>
+                <p>We combine expertise, reliability, and personalized service. Our experienced team ensures installations, repairs, and maintenance are done correctly the first time.</p>
+            </div>
+        </div>
+
+        <div class="extra-info">
+            <h3><i class="fas fa-building"></i> Who We Are</h3>
+            <p>Khamco Refrigeration Company Ltd is a trusted provider of refrigeration, air conditioning, and mechanical ventilation solutions in Kenya, serving a wide range of industries with professionalism and reliability.</p>
+
+            <h3><i class="fas fa-chart-pie"></i> Our Areas of Expertise</h3>
+            <ul>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Supermarkets (major and small)</li>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Hospitals and Healthcare Facilities</li>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Offices and Commercial Buildings</li>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Banks and Financial Institutions</li>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Food Processors and Manufacturers</li>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Restaurants and Hospitality</li>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Schools and Educational Institutions</li>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Hotels and Resorts</li>
+                <li><i class="fas fa-check-circle" style="color: #007A3D;"></i> Industrial Cold Storage</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service">
+                <strong><i class="fas fa-wind"></i> Air Conditioning</strong>
+                <p>We install, maintain, and repair air conditioning systems for homes, offices, and commercial spaces.</p>
+            </div>
+            <div class="service">
+                <strong><i class="fas fa-thermometer-half"></i> Refrigeration</strong>
+                <p>We offer complete refrigeration solutions including commercial fridges, freezers, and industrial cold storage.</p>
+            </div>
+            <div class="service">
+                <strong><i class="fas fa-fan"></i> Mechanical Ventilation</strong>
+                <p>Our team designs and installs mechanical ventilation systems to improve air quality and circulation.</p>
+            </div>
+            <div class="service">
+                <strong><i class="fas fa-tools"></i> Cold Room Maintenance</strong>
+                <p>We offer comprehensive cold room maintenance services to prevent breakdowns and maintain temperature consistency.</p>
+            </div>
+            <div class="service">
+                <strong><i class="fas fa-screwdriver"></i> AC Repair & Servicing</strong>
+                <p>Our technicians diagnose and repair AC units quickly, ensuring minimal downtime. Regular servicing to enhance efficiency.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <div class="container">
+        <h2>Our Work Gallery</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1581091012184-3c179be3c5e0?auto=format&fit=crop&w=600&q=80" alt="HVAC Installation" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1607453767578-8c3ebacfe3c3?auto=format&fit=crop&w=600&q=80" alt="Cold Room Installation" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1595663625510-5f261eeb65e3?auto=format&fit=crop&w=600&q=80" alt="Air Conditioning Unit" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80" alt="Commercial Refrigeration" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<div id="lightbox">
+    <img src="" alt="Enlarged view">
+</div>
+
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" id="submitBtn">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+        </form>
+        <div id="formStatus" style="text-align: center; margin-top: 20px; display: none;"></div>
+        
+        <div style="margin-top: 40px; text-align: center;">
+            <h3 style="color: #004080; margin-bottom: 15px;">Contact Information</h3>
+            <p><i class="fas fa-phone"></i> Phone: +254710160717</p>
+            <p><i class="fas fa-envelope"></i> Email: khamcorefrigeration@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: Nairobi, Kenya</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p><i class="far fa-copyright"></i> 2026 Khamco Refrigeration Company Ltd. All rights reserved.</p>
+    <p style="margin-top: 10px; font-size: 0.9rem;">Professional HVAC Solutions in Kenya</p>
+    <div style="margin-top: 15px;">
+        <i class="fab fa-facebook" style="margin: 0 10px; cursor: pointer;"></i>
+        <i class="fab fa-twitter" style="margin: 0 10px; cursor: pointer;"></i>
+        <i class="fab fa-instagram" style="margin: 0 10px; cursor: pointer;"></i>
+    </div>
+</footer>
+
+<script>
+// DOM Elements
+const links = document.querySelectorAll('[data-target]');
+const sections = document.querySelectorAll('section');
+const navMenu = document.getElementById('navMenu');
+const menuToggle = document.getElementById('menuToggle');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const contactForm = document.getElementById('contactForm');
+
+// Navigation function
+function showSection(target) {
+    // Remove active class from all sections
+    sections.forEach(sec => sec.classList.remove('active'));
+    
+    // Add active class to target section
+    const targetSection = document.getElementById(target);
+    if (targetSection) {
+        targetSection.classList.add('active');
+        // Smooth scroll to top of the section
+        const headerOffset = 80;
+        const elementPosition = targetSection.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    }
+    
+    // Close mobile menu if open
+    if (navMenu.classList.contains('show')) {
+        navMenu.classList.remove('show');
+    }
+    
+    // Update URL hash
+    history.pushState(null, null, `#${target}`);
+}
+
+// Handle navigation clicks
+links.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = link.getAttribute('data-target');
+        showSection(target);
+    });
+});
+
+// Mobile menu toggle
+menuToggle.onclick = (e) => {
+    e.stopPropagation();
+    navMenu.classList.toggle('show');
+};
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('show');
+    }
+});
+
+// Lightbox functionality
+document.querySelectorAll('.gallery img').forEach(img => {
+    img.onclick = () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        document.body.style.overflow = 'hidden';
+    };
+});
+
+lightbox.onclick = () => {
+    lightbox.style.display = 'none';
+    document.body.style.overflow = '';
+};
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+});
+
+// Form submission handling
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                formStatus.style.display = 'block';
+                formStatus.innerHTML = '<div style="background: #d4edda; color: #155724; padding: 15px; border-radius: 8px;"><i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We\'ll get back to you soon.</div>';
+                contactForm.reset();
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            formStatus.style.display = 'block';
+            formStatus.innerHTML = '<div style="background: #f8d7da; color: #721c24; padding: 15px; border-radius: 8px;"><i class="fas fa-exclamation-circle"></i> Oops! There was a problem. Please call us directly at +254710160717</div>';
+        } finally {
+            submitBtn.innerHTML = originalBtnText;
+            submitBtn.disabled = false;
+            setTimeout(() => {
+                if (formStatus.style.display === 'block') {
+                    formStatus.style.display = 'none';
+                }
+            }, 5000);
+        }
+    });
+}
+
+// Handle initial hash on page load
+if (window.location.hash) {
+    const target = window.location.hash.substring(1);
+    if (document.getElementById(target)) {
+        setTimeout(() => {
+            showSection(target);
+        }, 100);
+    }
+}
+
+// Add active state to current navigation item
+function setActiveNavItem() {
+    const currentSection = document.querySelector('section.active');
+    if (currentSection) {
+        const currentId = currentSection.getAttribute('id');
+        links.forEach(link => {
+            if (link.getAttribute('data-target') === currentId) {
+                link.style.background = 'rgba(255,255,255,0.2)';
+            } else {
+                link.style.background = '';
+            }
+        });
+    }
+}
+
+// Call on section change
+const observer = new MutationObserver(setActiveNavItem);
+sections.forEach(section => {
+    observer.observe(section, { attributes: true, attributeFilter: ['class'] });
+});
+</script>
+
+</body>
+</html>
